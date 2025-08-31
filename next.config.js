@@ -14,8 +14,28 @@ const nextConfig = {
   poweredByHeader: false,
   compress: true,
   
-  // Ensure proper output format
+  // Exclude backend files from frontend build
+  webpack: (config, { isServer }) => {
+    // Exclude backend directory from webpack compilation
+    config.externals = config.externals || [];
+    config.externals.push({
+      'express': 'express',
+      'cors': 'cors',
+      'helmet': 'helmet',
+      'morgan': 'morgan',
+      'dotenv': 'dotenv',
+    });
+    
+    return config;
+  },
+  
+  // Ensure proper output format for Vercel
   output: 'standalone',
+  
+  // Exclude backend from build
+  experimental: {
+    excludeDefaultMomentLocales: true,
+  },
 }
 
 module.exports = nextConfig

@@ -10,6 +10,7 @@
     "build": "node scripts/remove-console-logs.js && next build",
     "build:backend": "cd backend && npm run build",
     "build:full": "npm run build:backend && npm run build",
+    "build:vercel": "node scripts/remove-console-logs.js && next build",
     "start": "next start",
     "start:backend": "cd backend && npm start",
     "start:full": "concurrently \"npm run start:backend\" \"npm run start\"",

@@ -13,6 +13,9 @@ const nextConfig = {
   // Additional security measures
   poweredByHeader: false,
   compress: true,
+  
+  // Ensure proper output format
+  output: 'standalone',
 }
 
 module.exports = nextConfig

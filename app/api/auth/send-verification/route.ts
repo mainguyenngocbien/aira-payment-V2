@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
-import logger from '../../../../lib/logger';
-
+import logger from '@/lib/logger';
+import { ApiResponse } from '@/lib/types';
 import { generateVerificationCode } from '@/lib/verificationUtils';
 import { sendVerificationEmail } from '@/lib/emailService';
 
@@ -9,10 +9,14 @@ export async function POST(request: NextRequest) {
     const { email } = await request.json();
 
     if (!email) {
-      return NextResponse.json(
-        { error: 'Email is required' },
-        { status: 400 }
-      );
+      return NextResponse.json({
+        success: false,
+        error: {
+          code: 'MISSING_EMAIL',
+          message: 'Email is required'
+        },
+        timestamp: new Date().toISOString()
+      }, { status: 400 });
     }
 
     // Generate verification code
@@ -40,21 +44,33 @@ export async function POST(request: NextRequest) {
       // In a real app, you would store the code in database with expiration
       logger.log(`Verification code ${code} sent to ${email}`);
       
-      return NextResponse.json({
+      const response: ApiResponse<{ email: string }> = {
         success: true,
-        message: 'Verification code sent successfully'
-      });
+        data: { email },
+        message: 'Verification code sent successfully',
+        timestamp: new Date().toISOString()
+      };
+
+      return NextResponse.json(response, { status: 200 });
     } else {
-      return NextResponse.json(
-        { error: 'Failed to send verification code' },
-        { status: 500 }
-      );
+      return NextResponse.json({
+        success: false,
+        error: {
+          code: 'EMAIL_SEND_FAILED',
+          message: 'Failed to send verification code'
+        },
+        timestamp: new Date().toISOString()
+      }, { status: 500 });
     }
   } catch (error) {
     logger.error('Send verification error:', error);
-    return NextResponse.json(
-      { error: 'Internal server error' },
-      { status: 500 }
-    );
+    return NextResponse.json({
+      success: false,
+      error: {
+        code: 'INTERNAL_ERROR',
+        message: 'Internal server error'
+      },
+      timestamp: new Date().toISOString()
+    }, { status: 500 });
   }
 }

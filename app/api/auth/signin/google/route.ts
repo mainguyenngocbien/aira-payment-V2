@@ -1,40 +1,39 @@
 import { NextRequest, NextResponse } from 'next/server';
 import authService from '@/lib/authService';
 import { ApiResponse } from '@/lib/types';
-import logger from '@/lib/logger';
 
 export async function POST(request: NextRequest) {
   try {
-    const { email, password } = await request.json();
+    const { idToken } = await request.json();
 
-    if (!email || !password) {
+    if (!idToken) {
       return NextResponse.json({
         success: false,
         error: {
-          code: 'MISSING_CREDENTIALS',
-          message: 'Email and password are required'
+          code: 'MISSING_ID_TOKEN',
+          message: 'ID token is required'
         },
         timestamp: new Date().toISOString()
       }, { status: 400 });
     }
 
-    const result = await authService.signInWithEmail(email, password);
+    const result = await authService.signInWithGoogle(idToken);
     
     const response: ApiResponse<typeof result> = {
       success: true,
       data: result,
-      message: 'Login successful',
+      message: 'Google sign-in successful',
       timestamp: new Date().toISOString()
     };
 
     return NextResponse.json(response, { status: 200 });
   } catch (error) {
-    logger.error('Login error:', error);
+    console.error('Google sign-in error:', error);
     return NextResponse.json({
       success: false,
       error: {
-        code: 'LOGIN_FAILED',
-        message: 'Login failed'
+        code: 'GOOGLE_SIGNIN_FAILED',
+        message: 'Google sign-in failed'
       },
       timestamp: new Date().toISOString()
     }, { status: 500 });

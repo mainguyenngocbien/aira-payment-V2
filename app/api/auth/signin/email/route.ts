@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import authService from '@/lib/authService';
 import { ApiResponse } from '@/lib/types';
-import logger from '@/lib/logger';
 
 export async function POST(request: NextRequest) {
   try {
@@ -23,18 +22,18 @@ export async function POST(request: NextRequest) {
     const response: ApiResponse<typeof result> = {
       success: true,
       data: result,
-      message: 'Login successful',
+      message: 'Email sign-in successful',
       timestamp: new Date().toISOString()
     };
 
     return NextResponse.json(response, { status: 200 });
   } catch (error) {
-    logger.error('Login error:', error);
+    console.error('Email sign-in error:', error);
     return NextResponse.json({
       success: false,
       error: {
-        code: 'LOGIN_FAILED',
-        message: 'Login failed'
+        code: 'EMAIL_SIGNIN_FAILED',
+        message: 'Email sign-in failed'
       },
       timestamp: new Date().toISOString()
     }, { status: 500 });

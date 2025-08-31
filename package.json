@@ -1,0 +1,45 @@
+{
+  "name": "aira-payment-auth",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "dev:backend": "cd backend && npm run dev",
+    "dev:frontend": "next dev",
+    "dev:full": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "build": "node scripts/remove-console-logs.js && next build",
+    "build:backend": "cd backend && npm run build",
+    "build:full": "npm run build:backend && npm run build",
+    "start": "next start",
+    "start:backend": "cd backend && npm start",
+    "start:full": "concurrently \"npm run start:backend\" \"npm run start\"",
+    "lint": "next lint",
+    "remove-logs": "node scripts/remove-console-logs.js",
+    "build:secure": "NODE_ENV=production node scripts/remove-console-logs.js && next build",
+    "test-logs": "node scripts/test-production-logs.js",
+    "check-env": "node scripts/check-env.js",
+    "validate-env": "node scripts/validate-env.js",
+    "setup": "node scripts/setup-and-run.js"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.4.16",
+    "daisyui": "^4.4.20",
+    "firebase": "^9.23.0",
+    "lucide-react": "^0.294.0",
+    "next": "14.0.4",
+    "postcss": "^8.4.32",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-qr-code": "^2.0.18",
+    "tailwindcss": "^3.3.6"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "concurrently": "^9.2.1",
+    "eslint": "^8",
+    "eslint-config-next": "14.0.4",
+    "typescript": "^5"
+  }
+}

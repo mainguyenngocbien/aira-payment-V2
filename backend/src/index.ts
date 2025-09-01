@@ -21,7 +21,7 @@ import { requestLogger } from './middlewares/logger';
 dotenv.config();
 
 const app = express();
-const PORT = process.env['PORT'] || 3003;
+const PORT = process.env['PORT'] || 7003;
 
 // Security middleware
 app.use(helmet());
@@ -29,9 +29,10 @@ app.use(helmet());
 // CORS configuration
 app.use(cors({
   origin: [
-    'http://localhost:3000', // Frontend development
-    'http://127.0.0.1:3000',
-    process.env['FRONTEND_URL'] // Production frontend URL
+    'http://localhost:7000', // Frontend development
+    'http://127.0.0.1:7000',
+    'https://airapayment.olym3.xyz', // Production frontend URL
+    process.env['FRONTEND_URL'] // Additional frontend URL from env
   ].filter(Boolean) as string[],
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],

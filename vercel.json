@@ -19,5 +19,9 @@
   },
   "buildCommand": "npm run build:vercel",
   "outputDirectory": ".next",
-  "installCommand": "npm install"
+  "installCommand": "npm install",
+  "env": {
+    "NEXT_PUBLIC_API_BASE_URL": "https://apiaira.olym3.xyz:7003/api/v1",
+    "NEXT_PUBLIC_FRONTEND_URL": "https://airapayment.olym3.xyz"
+  }
 }

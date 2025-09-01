@@ -1,6 +1,6 @@
 import logger from './logger';
 // API Service for calling backend endpoints
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:3003/api/v1';
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://apiaira.olym3.xyz:7003/api/v1';
 
 export interface ApiResponse<T> {
   success: boolean;

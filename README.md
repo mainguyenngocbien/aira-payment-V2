@@ -98,13 +98,16 @@ npm run dev
 ## 🌐 Application URLs
 
 ### Development
-- **Frontend**: http://localhost:3000
-- **Backend API**: http://localhost:3003
-- **Backend Health Check**: http://localhost:3003/health
-- **API Documentation**: http://localhost:3003/api/v1/docs
+- **Frontend**: http://localhost:7000
+- **Backend API**: http://localhost:7003
+- **Backend Health Check**: http://localhost:7003/health
+- **API Documentation**: http://localhost:7003/api/v1/docs
 
 ### Production
-- Configure environment variables for production URLs
+- **Frontend**: https://airapayment.olym3.xyz
+- **Backend API**: https://apiaira.olym3.xyz:7003
+- **Backend Health Check**: https://apiaira.olym3.xyz:7003/health
+- **API Documentation**: https://apiaira.olym3.xyz:7003/api/v1/docs
 
 ## 🔌 API Endpoints
 
@@ -178,11 +181,11 @@ EMAIL_FROM_NAME=Your Name
 ### Backend (.env)
 ```env
 # Server Configuration
-PORT=3003
-NODE_ENV=development
+PORT=7003
+NODE_ENV=production
 
 # Frontend URL (for CORS)
-FRONTEND_URL=http://localhost:3000
+FRONTEND_URL=https://airapayment.olym3.xyz
 ```
 
 ## 🔒 Security Features
@@ -202,9 +205,9 @@ FRONTEND_URL=http://localhost:3000
 ## 📊 Development Workflow
 
 1. **Start Development**: `npm run dev:full`
-2. **Frontend Development**: http://localhost:3000
-3. **Backend Development**: http://localhost:3003
-4. **API Testing**: Use the documentation at http://localhost:3003/api/v1/docs
+2. **Frontend Development**: http://localhost:7000
+3. **Backend Development**: http://localhost:7003
+4. **API Testing**: Use the documentation at http://localhost:7003/api/v1/docs
 
 ## 🚀 Deployment
 
@@ -237,13 +240,13 @@ MIT License - see LICENSE file for details.
 
 ### Common Issues
 
-1. **Port conflicts**: Make sure ports 3000 and 3003 are available
+1. **Port conflicts**: Make sure ports 7000 and 7003 are available
 2. **Environment variables**: Ensure all required env vars are set
 3. **Firebase configuration**: Verify Firebase project settings
 4. **CORS issues**: Check backend CORS configuration
 
 ### Getting Help
 
-- Check the API documentation: http://localhost:3003/api/v1/docs
+- Check the API documentation: http://localhost:7003/api/v1/docs
 - Review the backend logs for errors
 - Check browser console for frontend errors

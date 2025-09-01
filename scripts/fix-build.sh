@@ -69,8 +69,13 @@ if [ -f ".next/prerender-manifest.json" ]; then
     success "prerender-manifest.json exists"
 else
     error "prerender-manifest.json missing"
-    # Try to create a minimal one
-    cat > .next/prerender-manifest.json << 'EOF'
+    # Run the prerender fix script
+    if [ -f "scripts/fix-prerender.sh" ]; then
+        log "Running prerender fix script..."
+        bash scripts/fix-prerender.sh
+    else
+        warning "fix-prerender.sh not found, creating minimal manifest"
+        cat > .next/prerender-manifest.json << 'EOF'
 {
   "version": 4,
   "routes": {},
@@ -81,7 +86,7 @@ else
   }
 }
 EOF
-    warning "Created minimal prerender-manifest.json"
+    fi
 fi
 
 # Check other required files

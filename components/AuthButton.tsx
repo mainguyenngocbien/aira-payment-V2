@@ -108,9 +108,9 @@ export default function AuthButton({ provider, variant = 'popup' }: AuthButtonPr
 
   const getButtonStyle = () => {
     if (provider === 'google') {
-      return 'btn btn-outline w-full hover:bg-gray-50 border-2 border-gray-200 hover:border-gray-300 bg-white text-gray-800';
+      return 'btn btn-outline w-full hover:bg-primary-50 border-2 border-gray-200 hover:border-primary-300 bg-white text-neutral-800 font-medium transition-all duration-200';
     } else {
-      return 'btn btn-outline w-full hover:bg-gray-50 border-2 border-gray-200 hover:border-gray-300 bg-white text-gray-800';
+      return 'btn btn-outline w-full hover:bg-secondary-50 border-2 border-gray-200 hover:border-secondary-300 bg-white text-neutral-800 font-medium transition-all duration-200';
     }
   };
 

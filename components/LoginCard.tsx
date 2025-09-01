@@ -123,17 +123,17 @@ export default function LoginCard() {
   }
 
   return (
-    <div className="card w-full max-w-md bg-white shadow-2xl border border-gray-100">
+    <div className="card w-full max-w-md bg-white shadow-strong border border-gray-100">
       <div className="card-body p-8">
         {/* Header */}
         <div className="text-center mb-8">
           <div className="flex justify-center mb-4">
             <Logo size="md" />
           </div>
-          <h1 className="text-2xl font-bold text-gray-800 mb-2">
+          <h1 className="text-2xl font-bold text-neutral-800 mb-2">
             {isSignupMode ? 'Create your account' : 'Visit AIRA Payment'}
           </h1>
-          <p className="text-gray-600 text-lg">
+          <p className="text-secondary-500 text-lg">
             {isSignupMode ? 'Join us today!' : 'Hey friend! Welcome back'}
           </p>
         </div>
@@ -149,14 +149,14 @@ export default function LoginCard() {
             {/* Divider */}
             <div className="flex items-center mb-6">
               <div className="flex-1 border-t border-gray-200"></div>
-              <span className="px-4 text-sm text-gray-500">Or</span>
+              <span className="px-4 text-sm text-secondary-400">Or</span>
               <div className="flex-1 border-t border-gray-200"></div>
             </div>
 
             {/* Email Login Button */}
             <button
               onClick={() => setIsEmailLoginMode(true)}
-              className="btn btn-outline btn-primary w-full mb-4"
+              className="btn btn-outline btn-primary w-full mb-4 hover:bg-primary-50 transition-all duration-200"
             >
               <Mail className="w-4 h-4 mr-2" />
               Continue with Email
@@ -164,11 +164,11 @@ export default function LoginCard() {
 
             {/* Footer */}
             <div className="text-center mt-6">
-              <p className="text-sm text-gray-600">
+              <p className="text-sm text-secondary-500">
                 No account?{' '}
                 <button
                   onClick={() => setIsSignupMode(true)}
-                  className="text-blue-600 hover:underline font-medium"
+                  className="text-primary-600 hover:text-primary-700 hover:underline font-medium transition-colors duration-200"
                 >
                   Create one
                 </button>
@@ -185,11 +185,11 @@ export default function LoginCard() {
 
             {/* Back to OAuth */}
             <div className="text-center mt-6">
-              <p className="text-sm text-gray-600">
+              <p className="text-sm text-secondary-500">
                 Or{' '}
                 <button
                   onClick={() => setIsEmailLoginMode(false)}
-                  className="text-blue-600 hover:underline font-medium"
+                  className="text-primary-600 hover:text-primary-700 hover:underline font-medium transition-colors duration-200"
                 >
                   continue with Google/Apple
                 </button>
@@ -206,11 +206,11 @@ export default function LoginCard() {
 
             {/* Footer */}
             <div className="text-center mt-6">
-              <p className="text-sm text-gray-600">
+              <p className="text-sm text-secondary-500">
                 Already have an account?{' '}
                 <button
                   onClick={() => setIsSignupMode(false)}
-                  className="text-blue-600 hover:underline font-medium"
+                  className="text-primary-600 hover:text-primary-700 hover:underline font-medium transition-colors duration-200"
                 >
                   Sign in
                 </button>

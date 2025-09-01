@@ -136,7 +136,7 @@ export default function EmailForm({ onEmailSubmit, onBackToLogin }: EmailFormPro
       {/* Back button */}
       <button
         onClick={handleBackToLogin}
-        className="btn btn-ghost btn-sm text-gray-500 hover:text-gray-700"
+        className="btn btn-ghost btn-sm text-secondary-500 hover:text-secondary-700 transition-colors duration-200"
       >
         <ArrowLeft className="w-4 h-4 mr-1" />
         Back to login
@@ -147,21 +147,21 @@ export default function EmailForm({ onEmailSubmit, onBackToLogin }: EmailFormPro
         {/* Display Name */}
         <div className="form-control">
           <label className="label">
-            <span className="label-text font-medium">Full Name (Optional)</span>
+            <span className="label-text font-medium text-neutral-700">Full Name (Optional)</span>
           </label>
           <input 
             type="text" 
             placeholder="Enter your full name" 
             value={displayName}
             onChange={(e) => setDisplayName(e.target.value)}
-            className="input input-bordered w-full focus:input-primary"
+            className="input input-bordered w-full focus:input-primary border-gray-200 focus:border-primary-500 transition-colors duration-200"
           />
         </div>
 
         {/* Email Input */}
         <div className="form-control">
           <label className="label">
-            <span className="label-text font-medium">Email</span>
+            <span className="label-text font-medium text-neutral-700">Email</span>
           </label>
           <div className="relative">
             <input 
@@ -169,17 +169,17 @@ export default function EmailForm({ onEmailSubmit, onBackToLogin }: EmailFormPro
               placeholder="Enter your email" 
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="input input-bordered w-full focus:input-primary pl-10"
+              className="input input-bordered w-full focus:input-primary pl-10 border-gray-200 focus:border-primary-500 transition-colors duration-200"
               required
             />
-            <Mail className="w-4 h-4 absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+            <Mail className="w-4 h-4 absolute left-3 top-1/2 transform -translate-y-1/2 text-secondary-400" />
           </div>
         </div>
 
         {/* Password Input */}
         <div className="form-control">
           <label className="label">
-            <span className="label-text font-medium">Password</span>
+            <span className="label-text font-medium text-neutral-700">Password</span>
           </label>
           <div className="relative">
             <input 
@@ -187,15 +187,15 @@ export default function EmailForm({ onEmailSubmit, onBackToLogin }: EmailFormPro
               placeholder="Create a password" 
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="input input-bordered w-full focus:input-primary pl-10 pr-10"
+              className="input input-bordered w-full focus:input-primary pl-10 pr-10 border-gray-200 focus:border-primary-500 transition-colors duration-200"
               required
               minLength={6}
             />
-            <Lock className="w-4 h-4 absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+            <Lock className="w-4 h-4 absolute left-3 top-1/2 transform -translate-y-1/2 text-secondary-400" />
             <button
               type="button"
               onClick={() => setShowPassword(!showPassword)}
-              className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600"
+              className="absolute right-3 top-1/2 transform -translate-y-1/2 text-secondary-400 hover:text-secondary-600 transition-colors duration-200"
             >
               {showPassword ? (
                 <EyeOff className="w-4 h-4" />
@@ -209,7 +209,7 @@ export default function EmailForm({ onEmailSubmit, onBackToLogin }: EmailFormPro
         {/* Confirm Password Input */}
         <div className="form-control">
           <label className="label">
-            <span className="label-text font-medium">Confirm Password</span>
+            <span className="label-text font-medium text-neutral-700">Confirm Password</span>
           </label>
           <div className="relative">
             <input 
@@ -217,15 +217,15 @@ export default function EmailForm({ onEmailSubmit, onBackToLogin }: EmailFormPro
               placeholder="Confirm your password" 
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
-              className="input input-bordered w-full focus:input-primary pl-10 pr-10"
+              className="input input-bordered w-full focus:input-primary pl-10 pr-10 border-gray-200 focus:border-primary-500 transition-colors duration-200"
               required
               minLength={6}
             />
-            <Lock className="w-4 h-4 absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+            <Lock className="w-4 h-4 absolute left-3 top-1/2 transform -translate-y-1/2 text-secondary-400" />
             <button
               type="button"
               onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-              className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600"
+              className="absolute right-3 top-1/2 transform -translate-y-1/2 text-secondary-400 hover:text-secondary-600 transition-colors duration-200"
             >
               {showConfirmPassword ? (
                 <EyeOff className="w-4 h-4" />
@@ -247,7 +247,7 @@ export default function EmailForm({ onEmailSubmit, onBackToLogin }: EmailFormPro
         <button 
           type="submit"
           disabled={isLoading || !email || !password || !confirmPassword}
-          className="btn btn-primary w-full disabled:opacity-50"
+          className="btn btn-primary w-full disabled:opacity-50 bg-gradient-primary hover:opacity-90 transition-all duration-200 shadow-medium"
         >
           {isLoading ? (
             <span className="loading loading-spinner loading-sm"></span>
@@ -261,11 +261,11 @@ export default function EmailForm({ onEmailSubmit, onBackToLogin }: EmailFormPro
       </form>
 
       {/* Terms and Privacy */}
-      <div className="text-center text-xs text-gray-500">
+      <div className="text-center text-xs text-secondary-500">
         By creating an account, you agree to our{' '}
-        <a href="#" className="text-blue-600 hover:underline">Terms of Service</a>
+        <a href="#" className="text-primary-600 hover:text-primary-700 hover:underline transition-colors duration-200">Terms of Service</a>
         {' '}and{' '}
-        <a href="#" className="text-blue-600 hover:underline">Privacy Policy</a>
+        <a href="#" className="text-primary-600 hover:text-primary-700 hover:underline transition-colors duration-200">Privacy Policy</a>
       </div>
     </div>
   );

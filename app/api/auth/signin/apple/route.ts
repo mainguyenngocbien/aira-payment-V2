@@ -1,4 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
+import logger from '../../../../../lib/logger';
+
 import authService from '@/lib/authService';
 import { ApiResponse } from '@/lib/types';
 
@@ -28,7 +30,7 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json(response, { status: 200 });
   } catch (error) {
-    console.error('Apple sign-in error:', error);
+    logger.error('Apple sign-in error:', error);
     return NextResponse.json({
       success: false,
       error: {

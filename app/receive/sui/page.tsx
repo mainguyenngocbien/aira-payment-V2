@@ -87,7 +87,7 @@ export default function SuiDepositPage() {
       <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center">
         <div className="text-center">
           <div className="loading loading-spinner loading-lg"></div>
-          <p className="mt-4 text-gray-600">
+          <p className="mt-4 text-readable-secondary">
             {authLoading ? 'Checking authentication...' : 'Loading wallet...'}
           </p>
         </div>
@@ -128,7 +128,7 @@ export default function SuiDepositPage() {
               >
                 <ArrowLeft className="w-5 h-5" />
               </button>
-              <h1 className="text-lg font-bold text-gray-900">On-Chain SUI Deposit</h1>
+              <h1 className="text-lg font-bold text-readable-primary">On-Chain SUI Deposit</h1>
             </div>
           </div>
         </div>
@@ -143,7 +143,7 @@ export default function SuiDepositPage() {
         <div className="card bg-white shadow-lg border-0">
           <div className="card-body p-6">
             <div className="text-center space-y-4">
-              <h3 className="text-lg font-semibold text-gray-900">Scan QR Code</h3>
+              <h3 className="text-lg font-semibold text-readable-primary">Scan QR Code</h3>
               <div className="flex justify-center p-6 bg-white rounded-lg border-2 border-gray-200" id="qr-code">
                 <QRCode value={suiAddress} size={200} />
               </div>
@@ -155,7 +155,7 @@ export default function SuiDepositPage() {
         <div className="card bg-white shadow-lg border-0">
           <div className="card-body p-6">
             <div className="space-y-3">
-              <h3 className="text-lg font-semibold text-gray-900">
+              <h3 className="text-lg font-semibold text-readable-primary">
                 SUI Wallet Address
               </h3>
               <div className="flex items-center space-x-3 p-4 bg-gray-50 rounded-lg">
@@ -201,8 +201,8 @@ export default function SuiDepositPage() {
                 </div>
               </div>
               <div>
-                <h4 className="font-semibold text-gray-900">SUI</h4>
-                <p className="text-sm text-gray-600">On-Chain SUI Wallet</p>
+                <h4 className="font-semibold text-readable-primary">SUI</h4>
+                <p className="text-sm text-readable-secondary">On-Chain SUI Wallet</p>
               </div>
             </div>
           </div>

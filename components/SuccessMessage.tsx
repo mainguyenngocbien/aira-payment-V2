@@ -29,10 +29,10 @@ export default function SuccessMessage({ email, onContinue, onResendVerification
 
       {/* Success Message */}
       <div>
-        <h2 className="text-2xl font-bold text-gray-800 mb-2">
+        <h2 className="text-2xl font-bold text-readable-primary mb-2">
           Account created successfully!
         </h2>
-        <p className="text-gray-600">
+        <p className="text-readable-secondary">
           Welcome to AIRA Payment! Your account has been created and a verification email has been sent.
         </p>
       </div>
@@ -90,7 +90,7 @@ export default function SuccessMessage({ email, onContinue, onResendVerification
       </div>
 
       {/* Additional Info */}
-      <div className="text-xs text-gray-500 space-y-1">
+      <div className="text-xs text-readable-muted space-y-1">
         <p>• Check your spam folder if you don&apos;t see the email</p>
         <p>• Click the verification link in your email to activate your account</p>
         <p>• You can sign in once your email is verified</p>

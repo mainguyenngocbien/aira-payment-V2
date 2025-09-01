@@ -90,7 +90,7 @@ const BackendStatus: React.FC<BackendStatusProps> = ({ className = '' }) => {
       {getStatusIcon()}
       <span className={getStatusColor()}>{getStatusText()}</span>
       {lastCheck && (
-        <span className="text-gray-500">
+        <span className="text-readable-muted">
           ({lastCheck.toLocaleTimeString()})
         </span>
       )}

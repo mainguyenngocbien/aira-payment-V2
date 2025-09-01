@@ -24,7 +24,7 @@ const EnvironmentInfo: React.FC<EnvironmentInfoProps> = ({
       case 'production':
         return <Globe className="w-4 h-4 text-purple-500" />;
       default:
-        return <Server className="w-4 h-4 text-gray-500" />;
+        return <Server className="w-4 h-4 text-readable-muted" />;
     }
   };
 
@@ -37,7 +37,7 @@ const EnvironmentInfo: React.FC<EnvironmentInfoProps> = ({
       case 'production':
         return 'text-purple-600';
       default:
-        return 'text-gray-600';
+        return 'text-readable-secondary';
     }
   };
 
@@ -60,7 +60,7 @@ const EnvironmentInfo: React.FC<EnvironmentInfoProps> = ({
       <span className={getEnvironmentColor()}>{getEnvironmentLabel()}</span>
       
       {showDetails && (
-        <div className="hidden md:block text-gray-500">
+        <div className="hidden md:block text-readable-muted">
           | API: {config.apiBaseUrl.replace('https://', '').replace('http://', '')}
         </div>
       )}

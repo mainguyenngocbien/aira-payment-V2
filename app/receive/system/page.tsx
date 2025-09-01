@@ -78,7 +78,7 @@ export default function SystemReceivePage() {
       <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center">
         <div className="text-center">
           <div className="loading loading-spinner loading-lg"></div>
-          <p className="mt-4 text-gray-600">
+          <p className="mt-4 text-readable-secondary">
             {authLoading ? 'Checking authentication...' : 'Loading Aira ID...'}
           </p>
         </div>
@@ -103,7 +103,7 @@ export default function SystemReceivePage() {
             > 
               <ArrowLeft className="w-5 h-5" />
             </button> 
-            <h1 className="text-lg font-bold text-gray-900">Aira ID Deposit</h1>
+            <h1 className="text-lg font-bold text-readable-primary">Aira ID Deposit</h1>
           </div>
         </div>
       </div>
@@ -122,8 +122,8 @@ export default function SystemReceivePage() {
                 </div>
               </div>
                               <div>
-                  <h2 className="text-xl font-bold text-gray-900">{userName}&apos;s ID</h2>
-                  <p className="text-sm text-gray-600">Aira ID: {airaId}</p>
+                  <h2 className="text-xl font-bold text-readable-primary">{userName}&apos;s ID</h2>
+                  <p className="text-sm text-readable-secondary">Aira ID: {airaId}</p>
                 </div>
             </div>
           </div>
@@ -134,7 +134,7 @@ export default function SystemReceivePage() {
         <div className="card bg-white shadow-lg border-0">
           <div className="card-body p-6">
             <div className="text-center space-y-4">
-              <h3 className="text-lg font-semibold text-gray-900">Scan QR Code</h3>
+              <h3 className="text-lg font-semibold text-readable-primary">Scan QR Code</h3>
               <div className="flex justify-center p-6 bg-white rounded-lg border-2 border-gray-200" id="qr-code">
                 <QRCode value={airaId} size={200} />
               </div>
@@ -146,7 +146,7 @@ export default function SystemReceivePage() {
         <div className="card bg-white shadow-lg border-0">
           <div className="card-body p-6">
             <div className="space-y-3">
-              <h3 className="text-lg font-semibold text-gray-900">Aira ID Address</h3>
+              <h3 className="text-lg font-semibold text-readable-primary">Aira ID Address</h3>
               <div className="flex items-center space-x-3 p-4 bg-gray-50 rounded-lg">
                 <code className="flex-1 text-sm font-mono break-all">{airaId}</code>
                 <button 

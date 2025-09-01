@@ -83,10 +83,10 @@ export default function EmailVerificationPending() {
               <Mail className="w-8 h-8 text-blue-600" />
             </div>
           </div>
-          <h1 className="text-2xl font-bold text-gray-800 mb-2">
+          <h1 className="text-2xl font-bold text-readable-primary mb-2">
             Verify Your Email
           </h1>
-          <p className="text-gray-600">
+          <p className="text-readable-secondary">
             We&apos;ve sent a verification link to your email address
           </p>
         </div>
@@ -95,12 +95,12 @@ export default function EmailVerificationPending() {
         <div className="card bg-white shadow-lg border border-gray-100 mb-6">
           <div className="card-body p-6">
             <div className="flex items-center space-x-3 mb-4">
-              <div className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center">
-                <Mail className="w-5 h-5 text-gray-600" />
+              <div className="w-10 h-10 bg-base-200 rounded-full flex items-center justify-center">
+                <Mail className="w-5 h-5 text-readable-secondary" />
               </div>
               <div>
-                <p className="font-medium text-gray-800">{user.email}</p>
-                <p className="text-sm text-gray-500">Check your inbox</p>
+                <p className="font-medium text-readable-primary">{user.email}</p>
+                <p className="text-sm text-readable-muted">Check your inbox</p>
               </div>
             </div>
 
@@ -168,7 +168,7 @@ export default function EmailVerificationPending() {
         <div className="text-center">
           <button
             onClick={handleSignOut}
-            className="btn btn-ghost btn-sm text-gray-500 hover:text-gray-700"
+            className="btn btn-ghost btn-sm text-readable-muted hover:text-readable-secondary"
           >
             <ArrowLeft className="w-4 h-4 mr-1" />
             Sign Out
@@ -178,8 +178,8 @@ export default function EmailVerificationPending() {
         {/* Help Section */}
         <div className="mt-8 text-center">
           <div className="bg-white rounded-lg p-4 shadow-sm border border-gray-100">
-            <h3 className="text-sm font-medium text-gray-800 mb-2">Need Help?</h3>
-            <div className="text-xs text-gray-600 space-y-1">
+            <h3 className="text-sm font-medium text-readable-primary mb-2">Need Help?</h3>
+            <div className="text-xs text-readable-secondary space-y-1">
               <p>• Check your spam folder</p>
               <p>• Make sure you entered the correct email</p>
               <p>• Contact support if you need assistance</p>

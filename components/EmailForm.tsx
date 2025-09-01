@@ -136,7 +136,7 @@ export default function EmailForm({ onEmailSubmit, onBackToLogin }: EmailFormPro
       {/* Back button */}
       <button
         onClick={handleBackToLogin}
-        className="btn btn-ghost btn-sm text-secondary-500 hover:text-secondary-700 transition-colors duration-200"
+        className="btn btn-ghost btn-sm text-readable-secondary hover:text-secondary-700 transition-colors duration-200"
       >
         <ArrowLeft className="w-4 h-4 mr-1" />
         Back to login
@@ -261,7 +261,7 @@ export default function EmailForm({ onEmailSubmit, onBackToLogin }: EmailFormPro
       </form>
 
       {/* Terms and Privacy */}
-      <div className="text-center text-xs text-secondary-500">
+      <div className="text-center text-xs text-readable-secondary">
         By creating an account, you agree to our{' '}
         <a href="#" className="text-primary-600 hover:text-primary-700 hover:underline transition-colors duration-200">Terms of Service</a>
         {' '}and{' '}

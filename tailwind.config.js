@@ -8,22 +8,36 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // Primary brand colors
+        // Primary brand colors - Optimized for readability
         primary: {
-          50: '#eff6ff',
-          100: '#dbeafe',
-          200: '#bfdbfe',
-          300: '#93c5fd',
-          400: '#60a5fa',
-          500: '#3b82f6',
-          600: '#2563eb',
-          700: '#1d4ed8',
-          800: '#1e40af',
-          900: '#1e3a8a',
-          950: '#172554',
+          50: '#f0f9ff',
+          100: '#e0f2fe',
+          200: '#bae6fd',
+          300: '#7dd3fc',
+          400: '#38bdf8',
+          500: '#0ea5e9',
+          600: '#0284c7',
+          700: '#0369a1',
+          800: '#075985',
+          900: '#0c4a6e',
+          950: '#082f49',
         },
-        // Secondary accent colors
+        // Secondary accent colors - High contrast for readability
         secondary: {
+          50: '#f8fafc',
+          100: '#f1f5f9',
+          200: '#e2e8f0',
+          300: '#cbd5e1',
+          400: '#94a3b8',
+          500: '#64748b',
+          600: '#475569',
+          700: '#334155',
+          800: '#1e293b',
+          900: '#0f172a',
+          950: '#020617',
+        },
+        // Text colors optimized for readability
+        text: {
           50: '#f8fafc',
           100: '#f1f5f9',
           200: '#e2e8f0',
@@ -78,7 +92,7 @@ module.exports = {
           900: '#7f1d1d',
           950: '#450a0a',
         },
-        // Neutral grays
+        // Neutral grays - Optimized for text readability
         neutral: {
           50: '#fafafa',
           100: '#f5f5f5',
@@ -91,6 +105,14 @@ module.exports = {
           800: '#262626',
           900: '#171717',
           950: '#0a0a0a',
+        },
+        // High contrast text colors for maximum readability
+        readable: {
+          primary: '#0f172a',    // Dark text on light backgrounds
+          secondary: '#475569',  // Medium text for secondary content
+          muted: '#64748b',      // Muted text for less important content
+          light: '#f8fafc',      // Light text on dark backgrounds
+          'light-secondary': '#cbd5e1', // Secondary light text
         },
       },
       fontFamily: {
@@ -137,18 +159,18 @@ module.exports = {
     themes: [
       {
         aira: {
-          "primary": "#3b82f6",
+          "primary": "#0ea5e9",
           "primary-content": "#ffffff",
-          "secondary": "#64748b",
+          "secondary": "#475569",
           "secondary-content": "#ffffff",
           "accent": "#8b5cf6",
           "accent-content": "#ffffff",
-          "neutral": "#1e293b",
+          "neutral": "#0f172a",
           "neutral-content": "#f8fafc",
           "base-100": "#ffffff",
           "base-200": "#f8fafc",
           "base-300": "#f1f5f9",
-          "base-content": "#1e293b",
+          "base-content": "#0f172a",
           "info": "#06b6d4",
           "info-content": "#ffffff",
           "success": "#22c55e",

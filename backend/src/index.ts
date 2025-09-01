@@ -23,14 +23,29 @@ dotenv.config();
 const app = express();
 const PORT = process.env['PORT'] || 7003;
 
-// Security middleware
-app.use(helmet());
+// Security middleware with custom configuration
+app.use(helmet({
+  crossOriginOpenerPolicy: { policy: "same-origin-allow-popups" },
+  crossOriginEmbedderPolicy: false,
+  contentSecurityPolicy: {
+    directives: {
+      defaultSrc: ["'self'"],
+      scriptSrc: ["'self'", "'unsafe-inline'", "'unsafe-eval'"],
+      styleSrc: ["'self'", "'unsafe-inline'"],
+      imgSrc: ["'self'", "data:", "https:"],
+      connectSrc: ["'self'", "https://api.firebase.com", "https://identitytoolkit.googleapis.com"],
+      frameSrc: ["'self'"],
+      objectSrc: ["'none'"],
+      upgradeInsecureRequests: [],
+    },
+  },
+}));
 
 // CORS configuration
 app.use(cors({
   origin: [
-    'http://localhost:7000', // Frontend development
-    'http://127.0.0.1:7000',
+    'http://localhost:7001', // Frontend development
+    'http://127.0.0.1:7001',
     'https://airapayment.olym3.xyz', // Production frontend URL
     process.env['FRONTEND_URL'] // Additional frontend URL from env
   ].filter(Boolean) as string[],

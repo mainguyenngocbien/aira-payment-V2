@@ -1,10 +1,7 @@
 'use client';
 
-import { auth, googleProvider, appleProvider } from '@/lib/firebase';
-import logger from '../lib/logger';
-
-import { signInWithPopup, signInWithRedirect } from 'firebase/auth';
-import { useState } from 'react';
+import { useAuthPopup } from '@/hooks/useAuthPopup';
+import { useState, useEffect } from 'react';
 import { Chrome, Apple } from 'lucide-react';
 import ErrorMessage from './ErrorMessage';
 
@@ -14,83 +11,35 @@ interface AuthButtonProps {
 }
 
 export default function AuthButton({ provider, variant = 'popup' }: AuthButtonProps) {
-  const [isLoading, setIsLoading] = useState(false);
+  const { signInWithGoogle, signInWithApple, handleRedirectResult, isLoading, error: authError } = useAuthPopup();
   const [error, setError] = useState<string | null>(null);
 
+  // Handle redirect result on component mount
+  useEffect(() => {
+    if (variant === 'redirect') {
+      handleRedirectResult().then((result) => {
+        if (result.error) {
+          setError(result.error);
+        }
+      });
+    }
+  }, [handleRedirectResult, variant]);
+
   const handleAuth = async () => {
-    logger.log('Starting authentication for:', provider);
-
-    if (!auth) {
-      const errorMsg = 'Authentication service not available. Please refresh the page.';
-      logger.error(errorMsg);
-      setError(errorMsg);
-      return;
-    }
-
-    const selectedProvider = provider === 'google' ? googleProvider : appleProvider;
-    
-    if (!selectedProvider) {
-      const errorMsg = `${provider} provider not available. Please check Firebase configuration.`;
-      logger.error(errorMsg);
-      setError(errorMsg);
-      return;
-    }
-
-    setIsLoading(true);
-    setError(null);
-    
     try {
-      if (variant === 'popup') {
-        logger.log('Attempting popup sign-in...');
-        const result = await signInWithPopup(auth, selectedProvider);
-        logger.log('Sign-in successful');
+      let result;
+      
+      if (provider === 'google') {
+        result = await signInWithGoogle();
       } else {
-        logger.log('Attempting redirect sign-in...');
-        await signInWithRedirect(auth, selectedProvider);
+        result = await signInWithApple();
+      }
+      
+      if (result.error) {
+        setError(result.error);
       }
     } catch (error: any) {
-      logger.error('Authentication error details:', {
-        code: error.code,
-        message: error.message,
-        email: error.email,
-        credential: error.credential
-      });
-      
-      // Handle specific error cases
-      let errorMessage = 'Authentication failed. Please try again.';
-      
-      switch (error.code) {
-        case 'auth/configuration-not-found':
-          errorMessage = 'Firebase configuration not found. Please check project settings.';
-          break;
-        case 'auth/popup-closed-by-user':
-          errorMessage = 'Sign-in was cancelled.';
-          break;
-        case 'auth/popup-blocked':
-          errorMessage = 'Pop-up was blocked. Please allow pop-ups for this site.';
-          break;
-        case 'auth/unauthorized-domain':
-          errorMessage = 'This domain is not authorized for sign-in. Please check Firebase Console settings.';
-          break;
-        case 'auth/network-request-failed':
-          errorMessage = 'Network error. Please check your connection.';
-          break;
-        case 'auth/operation-not-allowed':
-          errorMessage = `${provider} sign-in is not enabled. Please enable it in Firebase Console.`;
-          break;
-        case 'auth/invalid-api-key':
-          errorMessage = 'Invalid API key. Please check Firebase configuration.';
-          break;
-        case 'auth/web-storage-unsupported':
-          errorMessage = 'Web storage is not supported. Please enable cookies.';
-          break;
-        default:
-          errorMessage = `Authentication failed: ${error.message || error.code}`;
-      }
-      
-      setError(errorMessage);
-    } finally {
-      setIsLoading(false);
+      setError(error.message || 'Authentication failed');
     }
   };
 
@@ -116,9 +65,9 @@ export default function AuthButton({ provider, variant = 'popup' }: AuthButtonPr
 
   return (
     <div className="w-full">
-      {error && (
+      {(error || authError) && (
         <ErrorMessage 
-          message={error} 
+          message={error || authError || ''} 
           onClose={() => setError(null)}
           autoHide={true}
           duration={8000}

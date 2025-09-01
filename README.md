@@ -98,7 +98,7 @@ npm run dev
 ## 🌐 Application URLs
 
 ### Development
-- **Frontend**: http://localhost:7000
+- **Frontend**: http://localhost:7001
 - **Backend API**: http://localhost:7003
 - **Backend Health Check**: http://localhost:7003/health
 - **API Documentation**: http://localhost:7003/api/v1/docs
@@ -205,7 +205,7 @@ FRONTEND_URL=https://airapayment.olym3.xyz
 ## 📊 Development Workflow
 
 1. **Start Development**: `npm run dev:full`
-2. **Frontend Development**: http://localhost:7000
+2. **Frontend Development**: http://localhost:7001
 3. **Backend Development**: http://localhost:7003
 4. **API Testing**: Use the documentation at http://localhost:7003/api/v1/docs
 
@@ -240,7 +240,7 @@ MIT License - see LICENSE file for details.
 
 ### Common Issues
 
-1. **Port conflicts**: Make sure ports 7000 and 7003 are available
+1. **Port conflicts**: Make sure ports 7001 and 7003 are available
 2. **Environment variables**: Ensure all required env vars are set
 3. **Firebase configuration**: Verify Firebase project settings
 4. **CORS issues**: Check backend CORS configuration

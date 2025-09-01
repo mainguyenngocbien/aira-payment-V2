@@ -152,7 +152,9 @@ if (authInstance) {
   try {
     googleProvider = new GoogleAuthProvider();
     googleProvider.setCustomParameters({
-      prompt: 'select_account'
+      prompt: 'select_account',
+      // Fix COOP issues with popup windows
+      auth_type: 'reauthenticate'
     });
 
     appleProvider = new OAuthProvider('apple.com');

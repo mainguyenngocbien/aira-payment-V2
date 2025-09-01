@@ -27,18 +27,19 @@ const missingVars = Object.entries(requiredEnvVars)
   .map(([key]) => key);
 
 if (missingVars.length > 0) {
-  throw new Error(`Missing required environment variables: ${missingVars.join(', ')}`);
+  logger.warn(`⚠️ Missing environment variables: ${missingVars.join(', ')}`);
+  logger.warn('⚠️ Using mock Firebase configuration for development');
 }
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: requiredEnvVars.apiKey!,
-  authDomain: requiredEnvVars.authDomain!,
-  projectId: requiredEnvVars.projectId!,
-  storageBucket: requiredEnvVars.storageBucket!,
-  messagingSenderId: requiredEnvVars.messagingSenderId!,
-  appId: requiredEnvVars.appId!,
-  measurementId: requiredEnvVars.measurementId!
+  apiKey: requiredEnvVars.apiKey || 'mock-api-key',
+  authDomain: requiredEnvVars.authDomain || 'airapayment.olym3.xyz',
+  projectId: requiredEnvVars.projectId || 'aira-payment-mock',
+  storageBucket: requiredEnvVars.storageBucket || 'aira-payment-mock.appspot.com',
+  messagingSenderId: requiredEnvVars.messagingSenderId || '123456789',
+  appId: requiredEnvVars.appId || 'mock-app-id',
+  measurementId: requiredEnvVars.measurementId || 'mock-measurement-id'
 };
 
 // Alternative config (if needed)

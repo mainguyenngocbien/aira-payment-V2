@@ -1,7 +1,7 @@
 import { useState, useCallback } from 'react';
 import { signInWithPopup, signInWithRedirect, getRedirectResult } from 'firebase/auth';
-import { auth, googleProvider, appleProvider } from '../lib/firebase';
-import logger from '../lib/logger';
+import { auth, googleProvider, appleProvider } from '@/lib/firebase';
+import logger from '@/lib/logger';
 
 interface AuthPopupResult {
   user: any;

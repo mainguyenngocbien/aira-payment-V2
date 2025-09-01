@@ -269,7 +269,7 @@ export default function Dashboard() {
                 className="select select-bordered select-xs bg-white bg-opacity-20 text-white border-white border-opacity-30 text-xs"
               >
                 {Object.entries(NETWORKS).map(([key, network]) => (
-                  <option key={key} value={key} className="text-readable-primary">
+                  <option key={key} value={key} className="text-[#044aad]">
                     {network.name} ({network.symbol})
                   </option>
                 ))}
@@ -295,7 +295,7 @@ export default function Dashboard() {
                 </div>
                 <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
               </div>
-              <button className="btn btn-ghost btn-sm text-readable-secondary hover:bg-base-200">
+              <button className="btn btn-ghost btn-sm text-[#044aad] hover:bg-base-200">
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clipRule="evenodd" />
                 </svg>
@@ -314,8 +314,8 @@ export default function Dashboard() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
                   </svg>
                 </button>
-                <p className="text-sm text-readable-secondary mb-1">Available Balance</p>
-                <h2 className="text-3xl font-bold text-readable-primary mb-2">
+                <p className="text-sm text-[#044aad] mb-1">Available Balance</p>
+                <h2 className="text-3xl font-bold text-[#044aad] mb-2">
                   {balanceLoading || scanningAll ? (
                     <div className="loading loading-spinner loading-md"></div>
                   ) : balanceError ? (
@@ -329,7 +329,7 @@ export default function Dashboard() {
                     })()} USDT`
                   )}
                 </h2>
-                <div className="flex items-center justify-center space-x-2 text-readable-muted">
+                <div className="flex items-center justify-center space-x-2 text-[#044aad]">
                   <span className="text-sm">
                     {balanceLoading || scanningAll ? 'Loading...' : balanceError ? 'Error' : (() => {
                       const totalBalance = Object.values(allBalances).reduce((total, balanceData) => {
@@ -343,7 +343,7 @@ export default function Dashboard() {
                   </svg>
                 </div>
                 <div className="text-center mt-2">
-                  <p className="text-xs text-readable-muted">
+                  <p className="text-xs text-[#044aad]">
                     Total Across All Networks | Last Updated: {new Date().toLocaleTimeString()}
                   </p>
                 </div>
@@ -372,7 +372,7 @@ export default function Dashboard() {
             {/* Multi-Chain Balance Info */}
             <div className="mt-4 p-3 bg-gray-50 rounded-lg">
               <div className="flex items-center justify-between mb-3">
-                <p className="text-xs text-readable-secondary font-medium">Multi-Chain USDT Balance:</p>
+                <p className="text-xs text-[#044aad] font-medium">Multi-Chain USDT Balance:</p>
                 <button 
                   onClick={scanAllChains}
                   disabled={scanningAll}
@@ -394,7 +394,7 @@ export default function Dashboard() {
                   
                   return (
                     <div key={networkKey} className="flex items-center justify-between">
-                      <span className="text-xs text-readable-secondary">
+                      <span className="text-xs text-[#044aad]">
                         {networkInfo.name}:
                       </span>
                       <div className="flex items-center space-x-2">
@@ -420,7 +420,7 @@ export default function Dashboard() {
               
               {walletAddress && (
                 <div className="mt-3 pt-2 border-t border-gray-200">
-                  <p className="text-xs text-readable-muted">
+                  <p className="text-xs text-[#044aad]">
                     Wallet: {walletAddress.slice(0, 8)}...{walletAddress.slice(-6)}
                   </p>
                 </div>
@@ -433,7 +433,7 @@ export default function Dashboard() {
         <div className="card bg-white shadow-lg border-0">
           <div className="card-body p-6">
             <div className="flex items-center justify-between mb-6">
-              <h3 className="text-lg font-bold text-readable-primary">
+              <h3 className="text-lg font-bold text-[#044aad]">
                 Recent Transactions
               </h3>
               <button className="btn btn-ghost btn-sm text-blue-600 hover:bg-blue-50">
@@ -462,8 +462,8 @@ export default function Dashboard() {
                       </svg>
                     </div>
                     <div>
-                      <p className="font-medium text-readable-primary">{transaction.type}</p>
-                      <p className="text-sm text-readable-muted">{transaction.date}</p>
+                      <p className="font-medium text-[#044aad]">{transaction.type}</p>
+                      <p className="text-sm text-[#044aad]">{transaction.date}</p>
                     </div>
                   </div>
                   <div className="text-right">
@@ -502,7 +502,7 @@ export default function Dashboard() {
           </svg>
         </button>
         
-        <button className="text-readable-secondary">
+        <button className="text-[#044aad]">
           <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
             <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
           </svg>

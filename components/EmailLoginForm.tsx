@@ -107,7 +107,7 @@ export default function EmailLoginForm({ onLoginSuccess, onForgotPassword }: Ema
             className="input input-bordered w-full focus:input-primary pl-10"
             required
           />
-          <Mail className="w-4 h-4 absolute left-3 top-1/2 transform -translate-y-1/2 text-readable-muted" />
+          <Mail className="w-4 h-4 absolute left-3 top-1/2 transform -translate-y-1/2 text-[#044aad]" />
         </div>
       </div>
 
@@ -125,11 +125,11 @@ export default function EmailLoginForm({ onLoginSuccess, onForgotPassword }: Ema
             className="input input-bordered w-full focus:input-primary pl-10 pr-10"
             required
           />
-          <Lock className="w-4 h-4 absolute left-3 top-1/2 transform -translate-y-1/2 text-readable-muted" />
+          <Lock className="w-4 h-4 absolute left-3 top-1/2 transform -translate-y-1/2 text-[#044aad]" />
           <button
             type="button"
             onClick={() => setShowPassword(!showPassword)}
-            className="absolute right-3 top-1/2 transform -translate-y-1/2 text-readable-muted hover:text-readable-secondary"
+            className="absolute right-3 top-1/2 transform -translate-y-1/2 text-[#044aad] hover:text-[#044aad]"
           >
             {showPassword ? (
               <EyeOff className="w-4 h-4" />

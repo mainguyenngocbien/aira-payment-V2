@@ -89,7 +89,7 @@ export default function AuthTest() {
         {testResult && (
           <div className="bg-base-200 p-4 rounded-lg">
             <h4 className="font-semibold mb-2">Test Results:</h4>
-            <pre className="text-xs whitespace-pre-wrap text-readable-secondary">
+            <pre className="text-xs whitespace-pre-wrap text-[#044aad]">
               {testResult}
             </pre>
           </div>

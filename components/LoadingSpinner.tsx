@@ -22,7 +22,7 @@ export default function LoadingSpinner({ size = 'md', text = 'Loading...' }: Loa
         <div className="absolute inset-0 border-4 border-transparent border-t-blue-600 rounded-full animate-spin"></div>
       </div>
       {text && (
-        <p className="text-sm text-readable-secondary font-medium">{text}</p>
+        <p className="text-sm text-[#044aad] font-medium">{text}</p>
       )}
     </div>
   );

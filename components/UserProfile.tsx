@@ -85,10 +85,10 @@ export default function UserProfile({ user, sessionId, onSignOut, onResendVerifi
           </div>
 
           {/* User Info */}
-          <h2 className="text-2xl font-bold text-readable-primary mb-2">
+          <h2 className="text-2xl font-bold text-[#044aad] mb-2">
             Welcome back!
           </h2>
-          <p className="text-readable-secondary mb-4">
+          <p className="text-[#044aad] mb-4">
             {user.displayName || user.email}
           </p>
 
@@ -117,28 +117,28 @@ export default function UserProfile({ user, sessionId, onSignOut, onResendVerifi
           <div className="bg-gray-50 rounded-lg p-4 mb-6 space-y-3">
             {user.displayName && (
               <div className="flex items-center text-sm">
-                <UserIcon className="w-4 h-4 text-readable-muted mr-2" />
-                <span className="text-readable-secondary">{user.displayName}</span>
+                <UserIcon className="w-4 h-4 text-[#044aad] mr-2" />
+                <span className="text-[#044aad]">{user.displayName}</span>
               </div>
             )}
             
             {user.email && (
               <div className="flex items-center text-sm">
-                <Mail className="w-4 h-4 text-readable-muted mr-2" />
-                <span className="text-readable-secondary">{user.email}</span>
+                <Mail className="w-4 h-4 text-[#044aad] mr-2" />
+                <span className="text-[#044aad]">{user.email}</span>
               </div>
             )}
 
             <div className="flex items-center text-sm">
-              <Calendar className="w-4 h-4 text-readable-muted mr-2" />
-              <span className="text-readable-secondary">
+              <Calendar className="w-4 h-4 text-[#044aad] mr-2" />
+              <span className="text-[#044aad]">
                 Joined {formatDate(new Date(user.metadata.creationTime || Date.now()))}
               </span>
             </div>
 
             <div className="flex items-center text-sm">
-              <Shield className="w-4 h-4 text-readable-muted mr-2" />
-              <span className="text-readable-secondary">
+              <Shield className="w-4 h-4 text-[#044aad] mr-2" />
+              <span className="text-[#044aad]">
                 {user.emailVerified ? 'Email Verified' : 'Email Not Verified'}
               </span>
             </div>

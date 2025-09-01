@@ -40,7 +40,8 @@
     "test:env": "node scripts/test-environment.js",
     "test:system": "node scripts/test-system.js",
     "fix:prerender:local": "bash scripts/fix-prerender-local.sh",
-    "update:colors": "node scripts/update-text-colors.js"
+    "update:colors": "node scripts/update-text-colors.js",
+    "update:deep-blue": "node scripts/update-to-deep-blue.js"
   },
   "dependencies": {
     "autoprefixer": "^10.4.16",

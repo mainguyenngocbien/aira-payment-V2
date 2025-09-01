@@ -136,7 +136,7 @@ export default function EmailForm({ onEmailSubmit, onBackToLogin }: EmailFormPro
       {/* Back button */}
       <button
         onClick={handleBackToLogin}
-        className="btn btn-ghost btn-sm text-readable-secondary hover:text-secondary-700 transition-colors duration-200"
+        className="btn btn-ghost btn-sm text-[#044aad] hover:text-[#044aad] transition-colors duration-200"
       >
         <ArrowLeft className="w-4 h-4 mr-1" />
         Back to login
@@ -147,7 +147,7 @@ export default function EmailForm({ onEmailSubmit, onBackToLogin }: EmailFormPro
         {/* Display Name */}
         <div className="form-control">
           <label className="label">
-            <span className="label-text font-medium text-neutral-700">Full Name (Optional)</span>
+            <span className="label-text font-medium text-[#044aad]">Full Name (Optional)</span>
           </label>
           <input 
             type="text" 
@@ -161,7 +161,7 @@ export default function EmailForm({ onEmailSubmit, onBackToLogin }: EmailFormPro
         {/* Email Input */}
         <div className="form-control">
           <label className="label">
-            <span className="label-text font-medium text-neutral-700">Email</span>
+            <span className="label-text font-medium text-[#044aad]">Email</span>
           </label>
           <div className="relative">
             <input 
@@ -179,7 +179,7 @@ export default function EmailForm({ onEmailSubmit, onBackToLogin }: EmailFormPro
         {/* Password Input */}
         <div className="form-control">
           <label className="label">
-            <span className="label-text font-medium text-neutral-700">Password</span>
+            <span className="label-text font-medium text-[#044aad]">Password</span>
           </label>
           <div className="relative">
             <input 
@@ -195,7 +195,7 @@ export default function EmailForm({ onEmailSubmit, onBackToLogin }: EmailFormPro
             <button
               type="button"
               onClick={() => setShowPassword(!showPassword)}
-              className="absolute right-3 top-1/2 transform -translate-y-1/2 text-secondary-400 hover:text-secondary-600 transition-colors duration-200"
+              className="absolute right-3 top-1/2 transform -translate-y-1/2 text-secondary-400 hover:text-[#044aad] transition-colors duration-200"
             >
               {showPassword ? (
                 <EyeOff className="w-4 h-4" />
@@ -209,7 +209,7 @@ export default function EmailForm({ onEmailSubmit, onBackToLogin }: EmailFormPro
         {/* Confirm Password Input */}
         <div className="form-control">
           <label className="label">
-            <span className="label-text font-medium text-neutral-700">Confirm Password</span>
+            <span className="label-text font-medium text-[#044aad]">Confirm Password</span>
           </label>
           <div className="relative">
             <input 
@@ -225,7 +225,7 @@ export default function EmailForm({ onEmailSubmit, onBackToLogin }: EmailFormPro
             <button
               type="button"
               onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-              className="absolute right-3 top-1/2 transform -translate-y-1/2 text-secondary-400 hover:text-secondary-600 transition-colors duration-200"
+              className="absolute right-3 top-1/2 transform -translate-y-1/2 text-secondary-400 hover:text-[#044aad] transition-colors duration-200"
             >
               {showConfirmPassword ? (
                 <EyeOff className="w-4 h-4" />
@@ -261,7 +261,7 @@ export default function EmailForm({ onEmailSubmit, onBackToLogin }: EmailFormPro
       </form>
 
       {/* Terms and Privacy */}
-      <div className="text-center text-xs text-readable-secondary">
+      <div className="text-center text-xs text-[#044aad]">
         By creating an account, you agree to our{' '}
         <a href="#" className="text-primary-600 hover:text-primary-700 hover:underline transition-colors duration-200">Terms of Service</a>
         {' '}and{' '}

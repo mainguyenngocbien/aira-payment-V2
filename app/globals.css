@@ -4,40 +4,40 @@
 @tailwind utilities;
 
 :root {
-  /* Light theme colors - Optimized for readability */
-  --foreground-rgb: 15, 23, 42; /* readable-primary */
+  /* Light theme colors - Deep Blue #044aad */
+  --foreground-rgb: 4, 74, 173; /* #044aad */
   --background-start-rgb: 248, 250, 252; /* secondary-50 */
   --background-end-rgb: 255, 255, 255; /* base-100 */
-  --primary-rgb: 14, 165, 233; /* primary-500 */
-  --secondary-rgb: 71, 85, 105; /* readable-secondary */
+  --primary-rgb: 4, 74, 173; /* #044aad */
+  --secondary-rgb: 4, 74, 173; /* #044aad */
   --accent-rgb: 139, 92, 246; /* accent */
   --success-rgb: 34, 197, 94; /* success-500 */
   --warning-rgb: 245, 158, 11; /* warning-500 */
   --error-rgb: 239, 68, 68; /* error-500 */
-  --neutral-rgb: 15, 23, 42; /* readable-primary */
-  --neutral-light-rgb: 100, 116, 139; /* readable-muted */
-  --text-primary-rgb: 15, 23, 42; /* High contrast primary text */
-  --text-secondary-rgb: 71, 85, 105; /* Medium contrast secondary text */
-  --text-muted-rgb: 100, 116, 139; /* Low contrast muted text */
+  --neutral-rgb: 4, 74, 173; /* #044aad */
+  --neutral-light-rgb: 4, 74, 173; /* #044aad */
+  --text-primary-rgb: 4, 74, 173; /* Deep blue primary text */
+  --text-secondary-rgb: 4, 74, 173; /* Deep blue secondary text */
+  --text-muted-rgb: 4, 74, 173; /* Deep blue muted text */
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    /* Dark theme colors - Optimized for readability */
-    --foreground-rgb: 248, 250, 252; /* readable-light */
+    /* Dark theme colors - Deep Blue #044aad */
+    --foreground-rgb: 255, 255, 255; /* white text on dark */
     --background-start-rgb: 15, 23, 42; /* secondary-900 */
     --background-end-rgb: 15, 23, 42; /* secondary-900 */
-    --primary-rgb: 56, 189, 248; /* primary-400 */
-    --secondary-rgb: 203, 213, 225; /* readable-light-secondary */
+    --primary-rgb: 4, 74, 173; /* #044aad */
+    --secondary-rgb: 230, 240, 255; /* light blue for dark theme */
     --accent-rgb: 167, 139, 250; /* accent-400 */
     --success-rgb: 74, 222, 128; /* success-400 */
     --warning-rgb: 251, 191, 36; /* warning-400 */
     --error-rgb: 248, 113, 113; /* error-400 */
-    --neutral-rgb: 51, 65, 85; /* secondary-700 */
-    --neutral-light-rgb: 100, 116, 139; /* secondary-500 */
-    --text-primary-rgb: 248, 250, 252; /* High contrast light text */
-    --text-secondary-rgb: 203, 213, 225; /* Medium contrast light text */
-    --text-muted-rgb: 148, 163, 184; /* Low contrast light text */
+    --neutral-rgb: 4, 74, 173; /* #044aad */
+    --neutral-light-rgb: 230, 240, 255; /* light blue */
+    --text-primary-rgb: 255, 255, 255; /* White text on dark */
+    --text-secondary-rgb: 230, 240, 255; /* Light blue text */
+    --text-muted-rgb: 200, 210, 255; /* Lighter blue text */
   }
 }
 

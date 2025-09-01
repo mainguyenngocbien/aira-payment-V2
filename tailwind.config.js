@@ -108,11 +108,11 @@ module.exports = {
         },
         // High contrast text colors for maximum readability
         readable: {
-          primary: '#0f172a',    // Dark text on light backgrounds
-          secondary: '#475569',  // Medium text for secondary content
-          muted: '#64748b',      // Muted text for less important content
-          light: '#f8fafc',      // Light text on dark backgrounds
-          'light-secondary': '#cbd5e1', // Secondary light text
+          primary: '#044aad',    // Main text color - deep blue
+          secondary: '#044aad',  // Secondary text - same deep blue
+          muted: '#044aad',      // Muted text - same deep blue with opacity
+          light: '#ffffff',      // Light text on dark backgrounds
+          'light-secondary': '#e6f0ff', // Secondary light text
         },
       },
       fontFamily: {
@@ -159,18 +159,18 @@ module.exports = {
     themes: [
       {
         aira: {
-          "primary": "#0ea5e9",
+          "primary": "#044aad",
           "primary-content": "#ffffff",
-          "secondary": "#475569",
+          "secondary": "#044aad",
           "secondary-content": "#ffffff",
           "accent": "#8b5cf6",
           "accent-content": "#ffffff",
-          "neutral": "#0f172a",
-          "neutral-content": "#f8fafc",
+          "neutral": "#044aad",
+          "neutral-content": "#ffffff",
           "base-100": "#ffffff",
           "base-200": "#f8fafc",
           "base-300": "#f1f5f9",
-          "base-content": "#0f172a",
+          "base-content": "#044aad",
           "info": "#06b6d4",
           "info-content": "#ffffff",
           "success": "#22c55e",

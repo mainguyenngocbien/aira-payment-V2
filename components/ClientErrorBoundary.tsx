@@ -43,15 +43,15 @@ class ClientErrorBoundary extends Component<Props, State> {
                     <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
                   </svg>
                 </div>
-                <h2 className="text-xl font-bold text-readable-primary mb-2">
+                <h2 className="text-xl font-bold text-[#044aad] mb-2">
                   Something went wrong
                 </h2>
-                <p className="text-readable-secondary mb-4">
+                <p className="text-[#044aad] mb-4">
                   We encountered an error while loading the application.
                 </p>
                 {this.state.error && (
                   <details className="text-left mb-4">
-                    <summary className="cursor-pointer text-sm text-readable-muted hover:text-readable-secondary">
+                    <summary className="cursor-pointer text-sm text-[#044aad] hover:text-[#044aad]">
                       Error Details
                     </summary>
                     <pre className="mt-2 text-xs text-red-600 bg-red-50 p-2 rounded overflow-auto">

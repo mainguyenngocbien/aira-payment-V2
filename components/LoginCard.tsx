@@ -130,10 +130,10 @@ export default function LoginCard() {
           <div className="flex justify-center mb-4">
             <Logo size="md" />
           </div>
-          <h1 className="text-2xl font-bold text-readable-primary mb-2">
+          <h1 className="text-2xl font-bold text-[#044aad] mb-2">
             {isSignupMode ? 'Create your account' : 'Visit AIRA Payment'}
           </h1>
-          <p className="text-readable-secondary text-lg">
+          <p className="text-[#044aad] text-lg">
             {isSignupMode ? 'Join us today!' : 'Hey friend! Welcome back'}
           </p>
         </div>
@@ -164,7 +164,7 @@ export default function LoginCard() {
 
             {/* Footer */}
             <div className="text-center mt-6">
-              <p className="text-sm text-readable-secondary">
+              <p className="text-sm text-[#044aad]">
                 No account?{' '}
                 <button
                   onClick={() => setIsSignupMode(true)}
@@ -185,7 +185,7 @@ export default function LoginCard() {
 
             {/* Back to OAuth */}
             <div className="text-center mt-6">
-              <p className="text-sm text-readable-secondary">
+              <p className="text-sm text-[#044aad]">
                 Or{' '}
                 <button
                   onClick={() => setIsEmailLoginMode(false)}
@@ -206,7 +206,7 @@ export default function LoginCard() {
 
             {/* Footer */}
             <div className="text-center mt-6">
-              <p className="text-sm text-readable-secondary">
+              <p className="text-sm text-[#044aad]">
                 Already have an account?{' '}
                 <button
                   onClick={() => setIsSignupMode(false)}

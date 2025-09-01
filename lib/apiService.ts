@@ -1,6 +1,8 @@
 import logger from './logger';
+import environmentDetector from './environment';
+
 // API Service for calling backend endpoints
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://apiaira.olym3.xyz:7003/api/v1';
+const API_BASE_URL = environmentDetector.getApiBaseUrl();
 
 export interface ApiResponse<T> {
   success: boolean;

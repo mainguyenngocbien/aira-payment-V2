@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { Wifi, WifiOff, AlertCircle } from 'lucide-react';
 import logger from '@/lib/logger';
+import environmentDetector from '@/lib/environment';
 
 interface BackendStatusProps {
   className?: string;
@@ -17,7 +18,10 @@ const BackendStatus: React.FC<BackendStatusProps> = ({ className = '' }) => {
       const controller = new AbortController();
       const timeoutId = setTimeout(() => controller.abort(), 5000); // 5 second timeout
 
-      const response = await fetch('https://apiaira.olym3.xyz:7003/api/v1/health', {
+      const healthUrl = `${environmentDetector.getApiBaseUrl()}/health`;
+      logger.log(`🔍 Checking backend health at: ${healthUrl}`);
+
+      const response = await fetch(healthUrl, {
         signal: controller.signal,
         method: 'GET',
       });

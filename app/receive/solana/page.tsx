@@ -8,6 +8,7 @@ import QRCode from 'react-qr-code';
 import { useAuth } from '@/hooks/useAuth';
 import apiService from '@/lib/apiService';
 import BackendStatus from '@/components/BackendStatus';
+import EnvironmentInfo from '@/components/EnvironmentInfo';
 
 export default function SolanaDepositPage() {
   const router = useRouter();
@@ -134,7 +135,8 @@ export default function SolanaDepositPage() {
               </button>
               <h1 className="text-lg font-bold text-gray-900">On-Chain Solana Deposit</h1>
             </div>
-            <div className="flex items-center">
+            <div className="flex items-center space-x-4">
+              <EnvironmentInfo showDetails={true} />
               <BackendStatus />
             </div>
           </div>

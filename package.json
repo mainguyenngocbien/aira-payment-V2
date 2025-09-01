@@ -14,6 +14,7 @@
     "start": "next start -p 7001",
     "start:backend": "cd backend && npm start",
     "start:full": "concurrently \"npm run start:backend\" \"npm run start\"",
+    "start:safe": "bash scripts/start-safe.sh",
     "lint": "next lint",
     "remove-logs": "node scripts/remove-console-logs.js",
     "build:secure": "NODE_ENV=production node scripts/remove-console-logs.js && next build",
@@ -31,6 +32,7 @@
     "pm2:monitor": "pm2 monit",
     "deploy": "bash scripts/deploy.sh",
     "deploy:quick": "bash scripts/quick-deploy.sh",
+    "fix:build": "bash scripts/fix-build.sh",
     "monitor": "node scripts/monitor.js",
     "watcher": "node scripts/auto-build-watcher.js",
     "setup:hooks": "bash scripts/setup-git-hooks.sh"

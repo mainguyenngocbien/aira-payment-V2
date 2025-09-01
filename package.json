@@ -37,7 +37,8 @@
     "monitor": "node scripts/monitor.js",
     "watcher": "node scripts/auto-build-watcher.js",
     "setup:hooks": "bash scripts/setup-git-hooks.sh",
-    "test:env": "node scripts/test-environment.js"
+    "test:env": "node scripts/test-environment.js",
+    "test:system": "node scripts/test-system.js"
   },
   "dependencies": {
     "autoprefixer": "^10.4.16",

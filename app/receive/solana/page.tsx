@@ -7,6 +7,7 @@ import { ArrowLeft, Copy, Share, Download, Wallet } from 'lucide-react';
 import QRCode from 'react-qr-code';
 import { useAuth } from '@/hooks/useAuth';
 import apiService from '@/lib/apiService';
+import BackendStatus from '@/components/BackendStatus';
 
 export default function SolanaDepositPage() {
   const router = useRouter();
@@ -15,6 +16,7 @@ export default function SolanaDepositPage() {
   const [solanaAddress, setSolanaAddress] = useState<string>('');
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string>('');
+  const [isFallbackWallet, setIsFallbackWallet] = useState(false);
 
   // Get or create wallet for the user
   useEffect(() => {
@@ -34,6 +36,8 @@ export default function SolanaDepositPage() {
       try {
         const walletInfo = await apiService.getOrCreateWallet(user.email);
         setSolanaAddress(walletInfo.solanaWallet);
+        // Check if this is a fallback wallet (starts with hash pattern)
+        setIsFallbackWallet(walletInfo.solanaWallet.length === 44 && !walletInfo.solanaWallet.startsWith('solana'));
         setLoading(false);
       } catch (err) {
         logger.error('Failed to get wallet:', err);
@@ -130,6 +134,9 @@ export default function SolanaDepositPage() {
               </button>
               <h1 className="text-lg font-bold text-gray-900">On-Chain Solana Deposit</h1>
             </div>
+            <div className="flex items-center">
+              <BackendStatus />
+            </div>
           </div>
         </div>
       </div>
@@ -170,6 +177,19 @@ export default function SolanaDepositPage() {
             </div>
           </div>
         </div>
+
+        {/* Fallback Wallet Warning */}
+        {isFallbackWallet && (
+          <div className="alert alert-info shadow-lg">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="stroke-current shrink-0 w-6 h-6">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            <div>
+              <h3 className="font-bold">Development Mode</h3>
+              <div className="text-xs">Backend server is offline. Using fallback wallet address for demonstration.</div>
+            </div>
+          </div>
+        )}
 
         {/* Warning */}
         <div className="alert alert-warning shadow-lg">

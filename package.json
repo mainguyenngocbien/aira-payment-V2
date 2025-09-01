@@ -38,7 +38,8 @@
     "watcher": "node scripts/auto-build-watcher.js",
     "setup:hooks": "bash scripts/setup-git-hooks.sh",
     "test:env": "node scripts/test-environment.js",
-    "test:system": "node scripts/test-system.js"
+    "test:system": "node scripts/test-system.js",
+    "fix:prerender:local": "bash scripts/fix-prerender-local.sh"
   },
   "dependencies": {
     "autoprefixer": "^10.4.16",

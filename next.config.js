@@ -53,6 +53,8 @@ const nextConfig = {
     ignoreDuringBuilds: true,
   },
   
+
+  
   // Suppress export warnings for dynamic pages
   onDemandEntries: {
     // period (in ms) where the server will keep pages in the buffer

@@ -3,7 +3,6 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import AuthRedirectHandler from '@/components/AuthRedirectHandler'
 import FirebaseDebug from '@/components/FirebaseDebug'
-import ErrorBoundary from '@/components/ErrorBoundary'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -24,13 +23,11 @@ export default function RootLayout({
         <link rel="shortcut icon" href="/logo.png" type="image/png" />
       </head>
       <body className={inter.className}>
-        <ErrorBoundary>
-          <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
-            <AuthRedirectHandler />
-            <FirebaseDebug />
-            {children}
-          </div>
-        </ErrorBoundary>
+        <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
+          <AuthRedirectHandler />
+          <FirebaseDebug />
+          {children}
+        </div>
       </body>
     </html>
   )

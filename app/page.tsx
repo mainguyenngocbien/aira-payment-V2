@@ -1,6 +1,8 @@
 'use client';
 
 import LoginCard from '@/components/LoginCard';
+import logger from '../lib/logger';
+
 import { useAuthPopup } from '@/hooks/useAuthPopup';
 import { useEffect } from 'react';
 
@@ -12,7 +14,7 @@ export default function Home() {
     handleRedirectResult().then((result) => {
       if (result.user) {
         // Redirect to dashboard or handle successful authentication
-        console.log('User authenticated:', result.user);
+        logger.log('User authenticated:', result.user);
       }
     });
   }, [handleRedirectResult]);

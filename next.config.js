@@ -36,11 +36,11 @@ const nextConfig = {
   },
   
   // Ensure proper output format for Vercel
-  output: 'standalone',
+  // output: 'standalone', // Commented out for local development
   
   // Exclude backend from build
   experimental: {
-    excludeDefaultMomentLocales: true,
+    // excludeDefaultMomentLocales: true, // Removed - deprecated in Next.js 14
   },
   
   // Ignore TypeScript errors for backend files
@@ -51,6 +51,14 @@ const nextConfig = {
   // Ignore ESLint errors for backend files
   eslint: {
     ignoreDuringBuilds: true,
+  },
+  
+  // Suppress export warnings for dynamic pages
+  onDemandEntries: {
+    // period (in ms) where the server will keep pages in the buffer
+    maxInactiveAge: 25 * 1000,
+    // number of pages that should be kept simultaneously without being disposed
+    pagesBufferLength: 2,
   },
   
   // Security headers configuration to fix COOP errors
